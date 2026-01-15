@@ -1,0 +1,60 @@
+{
+  "name": "classname-search",
+  "version": "1.0.0",
+  "description": "A CLI tool that searches inside class and className attributes and matches against each class name individually.",
+  "author": "Yuichiroh Arai",
+  "license": "MIT",
+  "type": "module",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "bin": {
+    "classname-search": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsc",
+    "dev": "bun --watch src/cli.ts"
+  },
+  "keywords": [
+    "classname",
+    "cli",
+    "glob",
+    "jsx",
+    "refactor",
+    "regex",
+    "replace",
+    "search",
+    "tailwind"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuichiroharai/classname-search.git"
+  },
+  "homepage": "https://github.com/yuichiroharai/classname-search#readme",
+  "bugs": {
+    "url": "https://github.com/yuichiroharai/classname-search/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.24.1",
+    "commander": "^14.0.2",
+    "fast-glob": "^3.3.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.2",
+    "globals": "^16.5.0",
+    "prettier": "^3.7.4",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.49.0"
+  },
+  "volta": {
+    "node": "24.12.0"
+  }
+}
