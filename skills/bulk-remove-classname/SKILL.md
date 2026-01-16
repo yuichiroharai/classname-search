@@ -1,9 +1,9 @@
 ---
-name: remove-classnames
-description: Removes specified class names from HTML/JSX files using the classname-search CLI tool. Use when you need to safely remove all occurrences of a specified class name from target files.
+name: bulk-remove-classname
+description: Removes a specified class name from HTML/JSX files using the classname-search CLI tool. Use when you need to safely remove all occurrences of a specified class name from target files.
 ---
 
-# Guide to Removing Class Names
+# Guide to Bulk Removing a Class Name
 
 ## Prerequisites
 
