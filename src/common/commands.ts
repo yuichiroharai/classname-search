@@ -29,6 +29,13 @@ export const prepareContext = async (
   const cleanGlob = removeQuotes(targetGlob);
   const cleanRegex = removeQuotes(classRegex);
 
+  if (!cleanGlob) {
+    throw new Error("target-glob cannot be empty");
+  }
+  if (!cleanRegex) {
+    throw new Error("class-regex cannot be empty");
+  }
+
   const filteredFiles = await getTargetFiles(cleanGlob, options);
   const regex = new RegExp(cleanRegex);
 
