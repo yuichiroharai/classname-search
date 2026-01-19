@@ -55,8 +55,12 @@ export const searchCommand = addCommonArgs(new Command("search"))
     if (options.output) {
       const outputPath = path.resolve(process.cwd(), options.output);
       writeJsonl(outputPath, results);
+      const matchedFileCount = new Set(results.map((r) => r.file)).size;
+      const matchUnit = results.length === 1 ? "match" : "matches";
+      const matchedFileUnit = matchedFileCount === 1 ? "file" : "files";
+      const searchedFileUnit = filteredFiles.length === 1 ? "file" : "files";
       console.log(
-        `Saved ${results.length} matches found in ${filteredFiles.length} files to ${options.output}.`,
+        `Saved ${results.length} ${matchUnit} in ${matchedFileCount} ${matchedFileUnit} (searched ${filteredFiles.length} ${searchedFileUnit}) to ${options.output}.`,
       );
     } else {
       results.forEach((r) => console.log(JSON.stringify(r)));
