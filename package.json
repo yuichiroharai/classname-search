@@ -1,6 +1,6 @@
 {
   "name": "classname-search",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A CLI tool that searches inside class and className attributes and matches against each class name individually.",
   "author": "Yuichiroh Arai",
   "license": "MIT",
