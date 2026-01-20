@@ -5,6 +5,14 @@ description: A CLI tool that searches inside class and className attributes and 
 
 # Class Name Search Guide
 
+## Windows CLI Setup
+
+1. Run `echo --%`
+2. If output is empty (PowerShell): Add `--%` before arguments (e.g., `--% '^flex$'`)
+3. If not PowerShell: Run `npx -y node -e "console.log(process.argv[1])" "^test"`. If output is `test` instead of `^test`, escape `^` as `^^` (e.g., `^flex$` → `^^flex$`)
+
+See [CLI Reference](#cli-reference) for details.
+
 ## Count matched class names per file
 
 > [!WARNING]  
@@ -52,8 +60,12 @@ npx classname-search search 'src/components/**/*.jsx' 'flex'
 
 **File output:**
 
-Use `--output <file>` for large results or when requested by the user.  
+Redirect output to a file for large results or when requested by the user.  
 Working from file output is **strongly recommended** to avoid truncation and hallucination.
+
+```bash
+npx classname-search search 'src/components/**/*.jsx' 'flex' > 'filename.jsonl'
+```
 
 ## Search and replace class names
 
