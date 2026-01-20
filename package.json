@@ -15,7 +15,8 @@
   },
   "scripts": {
     "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsc",
-    "dev": "bun --watch src/cli.ts"
+    "test": "vitest run",
+    "test:dev": "vitest watch"
   },
   "keywords": [
     "classname",

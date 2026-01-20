@@ -1,0 +1,30 @@
+<!--  -->
+<div class="text-base">text-base</div>
+
+<!-- Supported attributes -->
+<div class="text-xs"></div>
+<div className="text-xs"></div>
+
+<!-- Quotes -->
+<div className="text-sm"></div>
+<div className='text-sm'></div>
+<div className={'text-sm'}></div>
+
+<!-- One attribute per line -->
+<div class="text-lg"><div class="text-lg"></div></div>
+
+<!-- Multi-line attributes are ignored -->
+<div class="text-white
+ bg-black"></div>
+
+<!-- Comments are processed -->
+<!-- <div class="text-xl"></div> -->
+
+<!-- Escaped characters in attribute value -->
+<div class="font-[\"Roboto\"]"></div>
+
+<!-- Whitespace normalization -->
+<div class=" mt-1  mr-2   mb-3    ml-4  ">
+
+<!-- Non-greedy match -->
+<div class="text-2xl" id="id">
