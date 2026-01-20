@@ -39,13 +39,13 @@ npx classname-search <subcommand> '<target-glob>' '<class-regex>' [options]
 
 ### ⚠️ Windows CLI Issues
 
-**PowerShell environment:**
-To check if you're in PowerShell, run `echo --%`. If the output is empty, you're in PowerShell.
-Always use the stop-parsing token (`--%`) with quotes. Without it, special characters may be silently modified, causing incorrect results without any error.
+**PowerShell environment:**  
+To check if you're in PowerShell, run `echo --%`. If the output is empty, you're in PowerShell.  
+Always use the stop-parsing token (`--%`) with quotes. Without it, special characters may be silently modified, causing incorrect results without any error.  
 The tool automatically strips outer quotes from arguments.
 
-**cmd.exe passthrough (when not using `--%`):**
-`npx` may pass through cmd.exe internally on Windows, which consumes `^` as an escape character.
+**cmd.exe passthrough (when not using `--%`):**  
+`npx` may pass through cmd.exe internally on Windows, which consumes `^` as an escape character.  
 To check if `^` is consumed, run `npx -y node -e "console.log(process.argv[1])" "^test"`. If the output is `test` instead of `^test`, escape `^` as `^^` (e.g., `^flex$` → `^^flex$`). Without this, results will be silently incorrect.
 
 ## Limitations
