@@ -52,11 +52,11 @@ This file is used for verification and troubleshooting if an error occurs during
 ### 2. Remove the Class Name
 
 ```bash
-npx classname-search replace '<glob>' '^<class-name>$' ''
+npx classname-search remove '<glob>' '^<class-name>$'
 ```
 
 > [!IMPORTANT]
-> Record the replacement count shown in the command output (e.g., `Replaced 7 matches`). This will be referred to as the `removal count`.
+> Record the removal count shown in the command output (e.g., `Removed 7 matches`). This will be referred to as the `removal count`.
 
 ### 3. Post-Removal Verification
 

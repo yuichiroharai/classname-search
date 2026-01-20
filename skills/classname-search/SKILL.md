@@ -81,6 +81,20 @@ npx classname-search replace 'src/components/**/*.jsx' -- '-slate-(\d+)$' '-neut
 Replaced 8 matches of "-slate-(\d+)$" with "-neutral-$1" in 3 files.
 ```
 
+## Remove class names
+
+**Command:**
+
+```bash
+npx classname-search remove 'src/components/**/*.jsx' '^font-normal$'
+```
+
+**Output:**
+
+```text
+Removed 5 matches of "^font-normal$" with "" in 2 files.
+```
+
 ## CLI Reference
 
 Fetch `https://raw.githubusercontent.com/yuichiroharai/classname-search/main/README.md`

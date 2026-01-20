@@ -24,6 +24,7 @@ A CLI tool that searches **inside `class` and `className` attributes** and match
 | `stats`    | Count matched class names per file |
 | `search`   | Search for class names             |
 | `replace`  | Search and replace class names     |
+| `remove`   | Remove class names                 |
 
 ## Usage
 
@@ -229,8 +230,6 @@ Replaced <N> matches of "<class-regex>" with "<replacement>" in <N> files.
 ```bash
 # Replace "fixed" with "absolute"
 npx classname-search replace 'src/components/**/*.jsx' '^fixed$' 'absolute'
-# Remove "font-normal"
-npx classname-search replace 'src/components/**/*.jsx' '^font-normal$' ''
 # Replace "-red-100" with "-red-200"
 npx classname-search replace 'src/components/**/*.jsx' -- '-red-100$' '-red-200'
 ```
@@ -255,4 +254,32 @@ npx classname-search replace 'src/components/**/*.jsx' '(text|bg)-blue-(\d+)$' '
 # ✅ md:flex → lg:flex
 # ❌ sm:hidden
 npx classname-search replace 'src/components/**/*.jsx' '^md:(.+)$' 'lg:$1'
+```
+
+## remove
+
+Remove class names.
+
+```bash
+npx classname-search remove '<target-glob>' '<class-regex>'
+```
+
+> [!NOTE]
+> This command is equivalent to `replace '<target-glob>' '<class-regex>' ''`.
+> Extra whitespace is automatically removed to maintain single-space separation.
+
+**Output:**
+
+```text
+Removed <N> matches of "<class-regex>" in <N> files.
+```
+
+### Examples
+
+```bash
+# Remove "font-normal" class
+npx classname-search remove 'src/components/**/*.jsx' '^font-normal$'
+
+# Remove all slate color classes
+npx classname-search remove 'src/components/**/*.jsx' -- '-slate-\d+'
 ```
